@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>專業個人履歷 - 您的姓名</title>
+    <style>
+        /* 基礎設定 */
+        :root {
+            --bg-color: #f3f2ef; /* LinkedIn 風格的淺灰背景 */
+            --card-bg: #ffffff;
+            --text-primary: #000000e6;
+            --text-secondary: #00000099;
+            --link-color: #0a66c2;
+            --border-color: #e0e0e0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            margin: 0;
+            padding: 20px 0;
+            line-height: 1.5;
+        }
+
+        /* 內容居中容器 */
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        /* 卡片共用樣式 */
+        .card {
+            background-color: var(--card-bg);
+            border-radius: 8px;
+            box-shadow: 0 0 0 1px rgba(0,0,0,0.08), 0 2px 3px rgba(0,0,0,0.04);
+            margin-bottom: 16px;
+            overflow: hidden;
+            padding: 24px;
+        }
+
+        /* 頂部個人資料卡片 (特殊無 padding 以容納背景圖) */
+        .profile-card {
+            padding: 0;
+        }
+
+        .cover-photo {
+            height: 160px;
+            background-color: #a0b4b7;
+            /* 如果你有背景圖，可以取消下面這行的註解並替換網址 */
+            /* background-image: url('您的背景圖網址'); */
+            background-size: cover;
+            background-position: center;
+        }
+
+        .profile-info {
+            padding: 0 24px 24px 24px;
+            position: relative;
+        }
+
+        .profile-picture {
+            width: 152px;
+            height: 152px;
+            border-radius: 50%;
+            border: 4px solid var(--card-bg);
+            margin-top: -112px; /* 讓圖片往上浮動蓋住背景圖 */
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            object-fit: cover;
+            background-color: white;
+        }
+
+        .profile-name {
+            font-size: 24px;
+            font-weight: 600;
+            margin: 12px 0 4px 0;
+        }
+
+        .profile-headline {
+            font-size: 16px;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+
+        .profile-location {
+            font-size: 14px;
+            color: var(--text-secondary);
+            margin-bottom: 16px;
+        }
+
+        .contact-btn {
+            background-color: var(--link-color);
+            color: white;
+            border: none;
+            padding: 6px 16px;
+            border-radius: 16px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .contact-btn:hover {
+            background-color: #004182;
+        }
+
+        /* 區塊標題 */
+        .section-title {
+            font-size: 20px;
+            font-weight: 600;
+            margin-top: 0;
+            margin-bottom: 16px;
+        }
+
+        /* 經歷與學歷項目 */
+        .item {
+            margin-bottom: 16px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid var(--border-color);
+        }
+        
+        .item:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+
+        .item-title {
+            font-size: 16px;
+            font-weight: 600;
+            margin: 0 0 4px 0;
+        }
+
+        .item-subtitle {
+            font-size: 14px;
+            color: var(--text-primary);
+            margin: 0 0 4px 0;
+        }
+
+        .item-date {
+            font-size: 14px;
+            color: var(--text-secondary);
+            margin: 0 0 8px 0;
+        }
+
+        .item-desc {
+            font-size: 14px;
+            color: var(--text-primary);
+            margin: 0;
+        }
+
+        .item-desc ul {
+            margin: 8px 0 0 0;
+            padding-left: 20px;
+        }
+
+        /* 技能標籤 */
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .skill-badge {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            padding: 6px 12px;
+            border-radius: 16px;
+            font-size: 14px;
+            font-weight: 600;
+            border: 1px solid var(--border-color);
+        }
+
+        /* 響應式設計 (手機版) */
+        @media (max-width: 600px) {
+            .profile-picture {
+                width: 120px;
+                height: 120px;
+                margin-top: -90px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        
+        <div class="card profile-card">
+            <div class="cover-photo"></div>
+            <div class="profile-info">
+                <img src="images/music.jpg?auto=format&fit=crop&q=80&w=256&h=256" alt="Profile Picture" class="profile-picture">
+                
+                <h1 class="profile-name">王大明 (David Wang)</h1>
+                <div class="profile-headline">資深全端軟體工程師 | 專注於高併發系統架構與使用者體驗</div>
+                <div class="profile-location">台灣, 台北市</div>
+                
+                <a href="mailto:your.email@example.com" class="contact-btn">聯絡我</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2 class="section-title">關於我</h2>
+            <p style="font-size: 14px; margin: 0;">
+                擁有超過 5 年以上的軟體開發經驗，擅長使用 React, Node.js 與 Python 建立高可用性的 Web 應用程式。對新技術充滿熱忱，善於在敏捷開發環境中與跨部門團隊協作，致力於透過程式碼解決真實世界的商業挑戰。
+            </p>
+        </div>
+
+        <div class="card">
+            <h2 class="section-title">工作經歷</h2>
+            
+            <div class="item">
+                <h3 class="item-title">資深軟體工程師</h3>
+                <div class="item-subtitle">TechCorp 科技股份有限公司</div>
+                <div class="item-date">2021年 5月 - 至今</div>
+                <div class="item-desc">
+                    <ul>
+                        <li>帶領 5 人開發團隊，成功重構核心支付系統，將系統效能提升 40%。</li>
+                        <li>導入 CI/CD 自動化部署流程，使產品發布時間縮短了 30%。</li>
+                        <li>負責與跨部門溝通需求，規劃系統架構並撰寫技術文件。</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="item">
+                <h3 class="item-title">前端工程師</h3>
+                <div class="item-subtitle">Innovate 數位解決方案</div>
+                <div class="item-date">2018年 7月 - 2021年 4月</div>
+                <div class="item-desc">
+                    <ul>
+                        <li>使用 React 與 Redux 開發企業級管理後台，服務超過 10,000 名活躍用戶。</li>
+                        <li>優化前端網頁載入速度，將 First Contentful Paint (FCP) 時間降低了 2 秒。</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2 class="section-title">學歷</h2>
+            
+            <div class="item">
+                <h3 class="item-title">國立台灣大學 (National Taiwan University)</h3>
+                <div class="item-subtitle">資訊工程學系 碩士</div>
+                <div class="item-date">2016年 9月 - 2018年 6月</div>
+            </div>
+
+            <div class="item">
+                <h3 class="item-title">國立清華大學 (National Tsing Hua University)</h3>
+                <div class="item-subtitle">資訊工程學系 學士</div>
+                <div class="item-date">2012年 9月 - 2016年 6月</div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2 class="section-title">專業技能</h2>
+            <div class="skills-container">
+                <span class="skill-badge">JavaScript (ES6+)</span>
+                <span class="skill-badge">React.js</span>
+                <span class="skill-badge">Node.js</span>
+                <span class="skill-badge">Python</span>
+                <span class="skill-badge">SQL / NoSQL</span>
+                <span class="skill-badge">Docker</span>
+                <span class="skill-badge">AWS</span>
+                <span class="skill-badge">Git</span>
+                <span class="skill-badge">敏捷開發 (Scrum)</span>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>
